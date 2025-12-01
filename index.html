@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>COVID-19 India – Data Analysis Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <header>
@@ -28,7 +30,7 @@
       <option value="Kerala">Kerala</option>
       <option value="Maharashtra">Maharashtra</option>
       <option value="Delhi">Delhi</option>
-      
+
     </select>
   </section>
 
@@ -49,6 +51,12 @@
     <h2>Total Deaths by State</h2>
     <img src="assets/total_deaths_by_state.png" class="viz-img">
   </section>
+  <!-- Daily New Confirmed Cases -->
+  <section>
+    <h2>Daily New Confirmed Cases (India Total)</h2>
+    <img src="assets/daily_new_cases.png" class="viz-img">
+  </section>
+
 
   <hr>
 
@@ -74,12 +82,13 @@
 
     stateSelect.addEventListener('change', () => {
       const state = stateSelect.value;
-      
+
       // Update image src paths dynamically
-       confirmedChart.src = `assets/confirmed_${state}_143.png`; 
+      confirmedChart.src = `assets/confirmed_${state}_143.png`;
       scatterChart.src = `assets/scatter_${state}.png`;
     });
   </script>
 
 </body>
+
 </html>
