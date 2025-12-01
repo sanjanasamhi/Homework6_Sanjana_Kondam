@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>COVID-19 India – Data Analysis Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>COVID-19 India – Data Analysis Dashboard</h1>
+    <h3>Student: Sanjana kondam – ID: 801420928</h3>
+  </header>
+
+  <section>
+    <p>
+      This dashboard presents the exploratory data analysis performed in Python on the
+      COVID-19 India dataset. All visualizations are exported as PNG images.
+    </p>
+  </section>
+
+  <hr>
+
+  <!-- State Selection for Interactive Charts -->
+  <section>
+    <label for="stateSelect">Select State: </label>
+    <select id="stateSelect">
+      <option value="Kerala">Kerala</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Delhi">Delhi</option>
+      <!-- Add other states if needed -->
+    </select>
+  </section>
+
+  <!-- Confirmed Cases Chart -->
+  <section>
+    <h2>Confirmed Cases Over Time</h2>
+    <img id="confirmedChart" src="assets/confirmed_Kerala_143.png" class="viz-img">
+  </section>
+
+  <!-- Cured vs Confirmed Chart -->
+  <section>
+    <h2>Cured vs Confirmed</h2>
+    <img id="scatterChart" src="assets/scatter_Kerala.png" class="viz-img">
+  </section>
+
+  <!-- Total Deaths Chart -->
+  <section>
+    <h2>Total Deaths by State</h2>
+    <img src="assets/total_deaths_by_state.png" class="viz-img">
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Key Insights</h2>
+    <ul>
+      <li>Kerala showed earliest outbreak and fastest increase in confirmed cases.</li>
+      <li>Recoveries lag behind confirmed cases by several days.</li>
+      <li>Deaths remained extremely low in the early dataset.</li>
+      <li>Date filtering and state-level comparisons reveal early-spread patterns.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p style="color:#888;">Dashboard deployed for assignment submission.</p>
+  </footer>
+
+  <!-- JS to change images dynamically based on state selection -->
+  <script>
+    const stateSelect = document.getElementById('stateSelect');
+    const confirmedChart = document.getElementById('confirmedChart');
+    const scatterChart = document.getElementById('scatterChart');
+
+    stateSelect.addEventListener('change', () => {
+      const state = stateSelect.value;
+      
+      // Update image src paths dynamically
+       confirmedChart.src = `assets/confirmed_${state}_0.png`; // default day 0
+      scatterChart.src = `assets/scatter_${state}.png`;
+    });
+  </script>
+
+</body>
+</html>
